@@ -1,0 +1,19 @@
+<head>
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+</head>
+
+<body>
+    <div id='pie'></div>
+    <script>
+         Plotly.d3.csv('choices.csv', (csvrr, rows) => {
+
+            var data = [{
+                labels: rows.map(r => r.food),
+                values: rows.map(r => r.count),
+                type: 'pie'
+            }];
+
+            Plotly.newPlot('pie', data);
+         });
+    </script>
+</body>
