@@ -8,7 +8,7 @@ import glob
 food = []
 stats = collections.Counter()
 
-for file in glob.glob("food/*.txt"):
+for file in glob.glob("food/*"):
     with open(file) as handle:
         choices = set([line.strip().lower() for line in handle.readlines()])
         stats.update(choices)
